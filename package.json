@@ -26,6 +26,9 @@
     "express-handlebars": "^3.1.0",
     "express-router": "0.0.1",
     "mongoose": "^5.7.12",
-    "request": "^2.88.0"
+    "morgan": "^1.9.1",
+    "request": "^2.88.0",
+    "scrape": "^0.2.3",
+    "website-scraper": "^4.2.0"
   }
 }

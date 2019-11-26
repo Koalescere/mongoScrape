@@ -2,6 +2,8 @@
 var express = require("express");
 var mongoose = require('mongoose');
 var exphbs = require("express-handlebars");
+var axios = require("axios");
+var logger = require("morgan");
 // var bodyParser = require("body-parser");
 
 // Set the port of our application
@@ -25,10 +27,12 @@ app.use(express.static(__dirname + "/public"));
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
+// Use morgan logger for logging requests
+app.use(logger("dev"));
 // Parse application body
 // app.use(bodyParser.urlencoded({ extended: false }))
 // app.use(bodyParser.json())
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // all request go through router
